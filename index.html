@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Amazing Unit Converter</title>
@@ -17,18 +17,53 @@
     </header>
 
     <main class="padded">
+
         <div id="interface">
-            <button type="button">Length</button>
-            <button type="button">Mass</button>
-            <button type="button">Pressure</button>
-            <button type="button">Speed</button>
-            <button type="button">Surface Area</button>
-            <button type="button">Volume</button>
+            <div class="menu-container hide">
+                <button type="button">Length</button>
+                <button type="button">Mass</button>
+                <button type="button">Pressure</button>
+                <button type="button">Speed</button>
+                <button type="button">Surface Area</button>
+                <button type="button">Volume</button>
+            </div>
+
+            <div id="conversion-units" class="hide">
+                <div id="header">
+                    <h2>Volume</h2>
+                </div>
+
+                <div class="units">
+                    <label for="Cubic Millimeter">Cubic Millimeter</label>
+                    <input id="Cubic Millimeter" type="number" />
+
+                    <label for="Cubic Meter">Cubic Meter</label>
+                    <input id="Cubic Meter" type="number" />
+
+                    <label for="Cubic Dekameter">Cubic Dekameter</label>
+                    <input id="Cubic Dekameter" type="number" />
+
+                    <label for="Cubic Inch">Cubic Inch</label>
+                    <input id="Cubic Inch" type="number" />
+
+                    <label for="Cubic Foot">Cubic Foot</label>
+                    <input id="Cubic Foot" type="number" />
+
+                    <label for="Cubic Yard">Cubic Yard</label>
+                    <input id="Cubic Yard" type="number" />
+                </div>
+            </div>
+
         </div>
+
     </main>
+
+
+
 
     <footer class="padded">
         <small>Copyright &copy; Vukory 2020-2020</small>
+    </footer>
 
 </body>
 

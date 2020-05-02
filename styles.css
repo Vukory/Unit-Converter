@@ -1,98 +1,114 @@
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-ul,
-li,
-div,
-header,
-main,
-footer,
-article {
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Themes */
-
-body {
-    --bg-pri: #404040;
-    --bg-sec: #2C2C2C;
-    --bg-tir: #1B1B1B;
-    --fg-txt: #FFFFFF;
-}
-
-
-/* Defaults */
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    font-family: Roboto, sans-serif;
-    background-color: var(--bg-sec);
-    color: var(--fg-txt);
-    overflow-x: hidden;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background-color: var(--bg-tir);
-    text-align: center;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-}
-
-#interface {
-    height: min-height;
-    width: 600px;
-    background-color: var(--bg-pri);
-    border-radius: .5em;
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    margin: 2em;
-}
-
-button {
-    background-color: var(--bg-sec);
-    height: 3em;
-    border: none;
-    border-radius: 1em;
-    margin: 0.5em;
-    color: var(--fg-txt);
-    font-family: Roboto, sans-serif;
-}
-
-button:hover {
-    background-color: var(--bg-tir);
-}
-
-footer {
-    text-align: center;
-}
-
-
-/* Utilities */
-
-.padded {
-    padding: 1em;
-}
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    ul,
+    li,
+    div,
+    header,
+    main,
+    footer,
+    article {
+        margin: 0;
+        padding: 0;
+    }
+    /* Themes */
+    
+    body {
+        --bg-pri: #404040;
+        --bg-sec: #2C2C2C;
+        --bg-tir: #1B1B1B;
+        --fg-txt: #FFFFFF;
+    }
+    /* Defaults */
+    
+    html,
+    body {
+        height: 100%;
+    }
+    
+    body {
+        font-family: Roboto, sans-serif;
+        background-color: var(--bg-sec);
+        color: var(--fg-txt);
+        overflow-x: hidden;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header {
+        background-color: var(--bg-tir);
+        text-align: center;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+    
+    #interface {
+        height: min-height;
+        width: 600px;
+        background-color: var(--bg-pri);
+        border-radius: .5em;
+        padding: 2em;
+        margin: 2em;
+    }
+    
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    button {
+        background-color: var(--bg-sec);
+        height: 3em;
+        border: none;
+        border-radius: 1em;
+        margin: 0.5em;
+        color: var(--fg-txt);
+        font-family: Roboto, sans-serif;
+    }
+    
+    button:hover {
+        background-color: var(--bg-tir);
+    }
+    
+    .menu-container.hide {
+        display: none;
+    }
+    
+    #header {
+        margin: 0 0 1.5em 0;
+        text-align: center;
+    }
+    
+    .units {
+        display: flex;
+        flex-direction: column;
+        font-style: Roboto, sans-serif;
+    }
+    
+    input[type=number] {
+        margin: 0 0 1em 0;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    /* Utilities */
+    
+    .padded {
+        padding: 1em;
+    }
