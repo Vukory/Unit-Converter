@@ -3,20 +3,18 @@
 /** Converter utility to convert data using specified datasets. */
 class Converter {
 
-    formTemplate = `
-        <label for="{0}">{0}</label>
-        <input id="{0}" type="number" value="{1}"/>
-    `;
-
     constructor(data) {
         this.data = data;
     }
 
-    /**
-     * @param source The source unit to convert from.
-     * @param target the target unit to convert to.
-     * @param value The value of source units to convert to target.
-     */
+    onChange(event) {
+            console.log(event);
+        }
+        /**
+         * @param source The source unit to convert from.
+         * @param target the target unit to convert to.
+         * @param value The value of source units to convert to target.
+         */
     convert(source, target, value) {
 
         if (!this.data.has(source))
@@ -44,28 +42,50 @@ class Converter {
      */
 
     generateForm() {
-        let result = '';
+        let unitElement = document.createElement('div');
 
         this.data.forEach((value, key) => {
-            result += this.formTemplate.replace(/\{0\}/g, key)
-                .replace('{1}', value);
+            let lableElement = document.createElement('label');
+            lableElement.setAttribute('for', key);
+            lableElement.innerText = key;
+            unitElement.appendChild(lableElement);
+
+            let inputElement = document.createElement('input');
+            inputElement.setAttribute('id', key);
+            inputElement.setAttribute('type', 'number');
+            inputElement.addEventListener('keyup', (event) => this.onChange(event));
+            unitElement.appendChild(inputElement);
         });
 
-        return result;
+        return unitElement;
     }
 }
 
-function insertForm(converter) {
-    let result = converter.generateForm(data);
-    let interfaceElement = document.getElementById('conversionUnits');
-    interfaceElement.innerHTML = result;
+function onButtonPress(title, converter) {
+    let titleElement = document.getElementById('header');
+    titleElement.innerHTML = event.target.innerText;
+
+    let interfaceElement = document.getElementById('units');
+    interfaceElement.innerHTML = '';
+
+    const unitElement = converter.generateForm();
+    interfaceElement.appendChild(unitElement);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("length").addEventListener("click", (event) => onButtonPress(event, length));
+    document.getElementById("mass").addEventListener("click", (event) => onButtonPress(event, mass));
+    document.getElementById("pressure").addEventListener("click", (event) => onButtonPress(event, null));
+    document.getElementById("speed").addEventListener("click", (event) => onButtonPress(event, null));
+    document.getElementById("surface").addEventListener("click", (event) => onButtonPress(event, surface));
+    document.getElementById("volume").addEventListener("click", (event) => onButtonPress(event, volume));
+});
 
 function onInput(event) {
     console.log(event);
 }
 
-const distance = new Converter(new Map([
+const length = new Converter(new Map([
     ['Milimeter', 1],
     ['Centimeter', 10],
     ['Meter', 1000],

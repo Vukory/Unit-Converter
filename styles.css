@@ -85,12 +85,8 @@
         background-color: var(--bg-tir);
     }
     
-    .menu-container.hide {
-        display: none;
-    }
-    
     #header {
-        margin: 0 0 1.5em 0;
+        margin: 1.5em 0;
         text-align: center;
     }
     
@@ -102,6 +98,12 @@
     
     input[type=number] {
         margin: 0 0 1em 0;
+        width: 97%;
+        height: 2em;
+        opacity: 0.5;
+        border-radius: 1em;
+        font-weight: bold;
+        padding: 0 1.5%;
     }
     
     footer {
