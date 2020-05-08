@@ -101,6 +101,7 @@ const converters = [
     new Converter('Dužina', "Assets/Images/meter.png", new Map([
         ['Milimetar (mm)', 1],
         ['Centimetar (cm)', 10],
+        ['Decimetar (dm)', 100],
         ['Metar (m)', 1000],
         ['Kilomatar (km)', 1000000],
         ['Inč (in)', 25.3999999999],
@@ -108,24 +109,31 @@ const converters = [
     ])),
 
     new Converter('Masa', "Assets/Images/scale.png", new Map([
-        ['Gram (g)', 1],
-        ['Kilogram (kg)', 1000],
-        ['Funta (lb)', 453.5923699936],
-        ['Kamen (st)', 6350.2931799101]
+        ['Miligram (mg)', 1],
+        ['Gram (g)', 1000],
+        ['Dekagram (dkg)', 10000],
+        ['Kilogram (kg)', 1000000],
+        ['Tona (t)', 1000000000],
+        ['Funta (lb)', 453592.3699936],
+        ['Kamen (st)', 6350293.1799101]
     ])),
 
     new Converter('Površina', "Assets/Images/surfaceArea.png", new Map([
         ['Kvadratni milimetar (mm²)', 1],
         ['Kvadratni centimetar (cm²)', 100],
+        ['Kvadratni decimetar (dm²)', 10000],
+        ['Kvadratni metar (m²)', 1000000],
         ['Kvadratni inč (in²)', 645.1599999874],
         ['Kvadratna stopa (ft²)', 92903.0399981823],
-        ['Aker (acre)', 4046856422.320823]
-    ]), "width:1024px; margin-left:-20%"),
+        ['Aker (acre)', 4046856422.320823],
+        ['Ar (ar)', 100000000]
+    ]), "width:1300px; margin-left:-20%"),
 
     new Converter('Zapremina', "Assets/Images/measurer.png", new Map([
         ['Kubni milimetar (mm³)', 1],
+        ['Kubni centimetar (cm³)', 1000],
+        ['Kubni decimetar (dm³)', 1000000],
         ['Kubni metar (m³)', 1000000000],
-        ['Kubni decimetar (dm³)', 1000000000000],
         ['Kubni inč (in³)', 16387.064],
         ['Kubna stopa (ft³)', 28316846.5917],
         ['Kubni jard (yd³)', 764554857.9752]
