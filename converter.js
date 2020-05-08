@@ -3,9 +3,10 @@
 /** Converter utility to convert data using specified datasets. */
 class Converter {
 
-    constructor(name, data) {
+    constructor(name, data, icon) {
         this.name = name;
         this.data = data;
+        this.icon = icon;
     }
 
     onChange(event) {
@@ -82,8 +83,14 @@ function onButtonPress(converter) {
     let interfaceElement = document.getElementById('units');
     interfaceElement.innerHTML = '';
 
+    let iconElement = document.getElementsById('icon');
+    let image = document.createElement('img');
+    image.src = converter.icon;
+    iconElement.appendChild(image);
+
     const unitElement = converter.generateForm();
     interfaceElement.appendChild(unitElement);
+
 }
 
 const converters = [
@@ -93,29 +100,32 @@ const converters = [
         ['Metar (m)', 1000],
         ['Kilomatar (km)', 1000000],
         ['Inč (in)', 25.3999999999],
-        ['Stope (ft)', 304.7999999987],
-    ])),
+        ['Stope (ft)', 304.7999999987]
+    ], "Assets/Images/meter.png")),
+
     new Converter('Masa', new Map([
         ['Gram (g)', 1],
         ['Kilogram (kg)', 1000],
         ['Funta (lb)', 453.5923699936],
         ['Kamen (st)', 6350.2931799101]
-    ])),
+    ], "Assets/Images/meter.png")),
+
     new Converter('Površina', new Map([
         ['Kvadratni milimetar (mm²)', 1],
         ['Kvadratni centimetar (cm²)', 100],
         ['Kvadratni inč (in²)', 645.1599999874],
         ['Kvadratna stopa (ft²)', 92903.0399981823],
         ['Aker (acre)', 4046856422.320823]
-    ])),
+    ], "Assets/Images/meter.png")),
+
     new Converter('Zapremina', new Map([
         ['Kubni milimetar (mm³)', 1],
         ['Kubni metar (m³)', 1000000000],
         ['Kubni decimetar (dm³)', 1000000000000],
         ['Kubni inč (in³)', 16387.064],
         ['Kubna stopa (ft³)', 28316846.5917],
-        ['Kubni jard (yd³)', 764554857.9752],
-    ]))
+        ['Kubni jard (yd³)', 764554857.9752]
+    ], "Assets/Images/meter.png"))
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
