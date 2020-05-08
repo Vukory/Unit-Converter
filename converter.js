@@ -3,10 +3,11 @@
 /** Converter utility to convert data using specified datasets. */
 class Converter {
 
-    constructor(name, icon, data) {
+    constructor(name, icon, data, style) {
         this.name = name;
         this.icon = icon;
         this.data = data;
+        this.style = style;
     }
 
     onChange(event) {
@@ -88,6 +89,9 @@ function onButtonPress(converter) {
     let iconElement = document.getElementById('icon');
     let image = document.createElement('img');
     image.src = converter.icon;
+    if (converter.style)
+        image.setAttribute('style', converter.style);
+
     iconElement.innerHTML = '';
     iconElement.appendChild(image);
 
@@ -116,7 +120,7 @@ const converters = [
         ['Kvadratni inč (in²)', 645.1599999874],
         ['Kvadratna stopa (ft²)', 92903.0399981823],
         ['Aker (acre)', 4046856422.320823]
-    ])),
+    ]), "width:1024px; margin-left:-20%"),
 
     new Converter('Zapremina', "Assets/Images/measurer.png", new Map([
         ['Kubni milimetar (mm³)', 1],
