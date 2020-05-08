@@ -3,10 +3,10 @@
 /** Converter utility to convert data using specified datasets. */
 class Converter {
 
-    constructor(name, data, icon) {
+    constructor(name, icon, data) {
         this.name = name;
-        this.data = data;
         this.icon = icon;
+        this.data = data;
     }
 
     onChange(event) {
@@ -82,50 +82,50 @@ function onButtonPress(converter) {
 
     let interfaceElement = document.getElementById('units');
     interfaceElement.innerHTML = '';
-
-    let iconElement = document.getElementsById('icon');
-    let image = document.createElement('img');
-    image.src = converter.icon;
-    iconElement.appendChild(image);
-
     const unitElement = converter.generateForm();
     interfaceElement.appendChild(unitElement);
+
+    let iconElement = document.getElementById('icon');
+    let image = document.createElement('img');
+    image.src = converter.icon;
+    iconElement.innerHTML = '';
+    iconElement.appendChild(image);
 
 }
 
 const converters = [
-    new Converter('Dužina', new Map([
+    new Converter('Dužina', "Assets/Images/meter.png", new Map([
         ['Milimetar (mm)', 1],
         ['Centimetar (cm)', 10],
         ['Metar (m)', 1000],
         ['Kilomatar (km)', 1000000],
         ['Inč (in)', 25.3999999999],
         ['Stope (ft)', 304.7999999987]
-    ], "Assets/Images/meter.png")),
+    ])),
 
-    new Converter('Masa', new Map([
+    new Converter('Masa', "Assets/Images/scale.png", new Map([
         ['Gram (g)', 1],
         ['Kilogram (kg)', 1000],
         ['Funta (lb)', 453.5923699936],
         ['Kamen (st)', 6350.2931799101]
-    ], "Assets/Images/meter.png")),
+    ])),
 
-    new Converter('Površina', new Map([
+    new Converter('Površina', "Assets/Images/surfaceArea.png", new Map([
         ['Kvadratni milimetar (mm²)', 1],
         ['Kvadratni centimetar (cm²)', 100],
         ['Kvadratni inč (in²)', 645.1599999874],
         ['Kvadratna stopa (ft²)', 92903.0399981823],
         ['Aker (acre)', 4046856422.320823]
-    ], "Assets/Images/meter.png")),
+    ])),
 
-    new Converter('Zapremina', new Map([
+    new Converter('Zapremina', "Assets/Images/measurer.png", new Map([
         ['Kubni milimetar (mm³)', 1],
         ['Kubni metar (m³)', 1000000000],
         ['Kubni decimetar (dm³)', 1000000000000],
         ['Kubni inč (in³)', 16387.064],
         ['Kubna stopa (ft³)', 28316846.5917],
         ['Kubni jard (yd³)', 764554857.9752]
-    ], "Assets/Images/meter.png"))
+    ]))
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -64,6 +64,8 @@
         border-radius: .5em;
         padding: 2em;
         margin: 2em;
+        overflow: hidden;
+        position: relative;
     }
     
     .menu-container {
@@ -88,12 +90,14 @@
     #header {
         margin: 1.5em 0;
         text-align: center;
+        z-index: 2;
     }
     
-    .units {
+    #units {
         display: flex;
         flex-direction: column;
         font-style: Roboto, sans-serif;
+        z-index: 2;
     }
     
     input[type=number] {
@@ -105,10 +109,22 @@
         font-weight: bold;
         padding: 0 1.5%;
         margin: 0.5em 0 1.5em 0;
+        z-index: 2;
     }
     
     label {
         margin: 0 0 0 0.5em;
+    }
+    
+    #icon {
+        position: absolute;
+        left: 40%;
+        bottom: -5%;
+    }
+    
+    #icon img {
+        width: 600px;
+        transform: rotate(-35deg);
     }
     
     footer {
