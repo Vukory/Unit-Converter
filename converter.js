@@ -87,34 +87,34 @@ function onButtonPress(converter) {
 }
 
 const converters = [
-    new Converter('Length', new Map([
-        ['Millimeter', 1],
-        ['Centimeter', 10],
-        ['Meter', 1000],
-        ['Kilometer', 1000000],
-        ['Inch', 25.3999999999],
-        ['Feet', 304.7999999987],
+    new Converter('Dužina', new Map([
+        ['Milimetar (mm)', 1],
+        ['Centimetar (cm)', 10],
+        ['Metar (m)', 1000],
+        ['Kilomatar (km)', 1000000],
+        ['Inč (in)', 25.3999999999],
+        ['Stope (ft)', 304.7999999987],
     ])),
-    new Converter('Weight', new Map([
-        ['Gram', 1],
-        ['Kilogram', 1000],
-        ['Pound', 453.5923699936],
-        ['Stone', 6350.2931799101]
+    new Converter('Masa', new Map([
+        ['Gram (g)', 1],
+        ['Kilogram (kg)', 1000],
+        ['Funta (lb)', 453.5923699936],
+        ['Kamen (st)', 6350.2931799101]
     ])),
-    new Converter('Area', new Map([
-        ['Square Millimeter', 1],
-        ['Square Centimeter', 100],
-        ['Square Inch', 645.1599999874],
-        ['Square Feet', 92903.0399981823],
-        ['Acre', 4046856422.320823],
+    new Converter('Površina', new Map([
+        ['Kvadratni milimetar (mm²)', 1],
+        ['Kvadratni centimetar (cm²)', 100],
+        ['Kvadratni inč (in²)', 645.1599999874],
+        ['Kvadratna stopa (ft²)', 92903.0399981823],
+        ['Aker (acre)', 4046856422.320823]
     ])),
-    new Converter('Volume', new Map([
-        ['Cubic Millimeter', 1],
-        ['Cubic Meter', 1000000000],
-        ['Cubic Dekameter', 1000000000000],
-        ['Cubic Inch', 16387.064],
-        ['Cubic Foot', 28316846.5917],
-        ['Cubic Yard', 764554857.9752],
+    new Converter('Zapremina', new Map([
+        ['Kubni milimetar (mm³)', 1],
+        ['Kubni metar (m³)', 1000000000],
+        ['Kubni decimetar (dm³)', 1000000000000],
+        ['Kubni inč (in³)', 16387.064],
+        ['Kubna stopa (ft³)', 28316846.5917],
+        ['Kubni jard (yd³)', 764554857.9752],
     ]))
 ];
 
